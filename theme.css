@@ -1,0 +1,91 @@
+/* CURSOR DARK MIDNIGHT (Port)
+    Author: Kevin Nord
+    Version: 2.2 (Subtle Contrast Update)
+*/
+
+:root {
+  /* --- CORE PALETTE --- */
+  --c-bg: #1e2127;           /* Main editor background */
+  --c-side: #191c22;         /* Sidebars / Navigation */
+  --c-border: #ffffff0d;     /* UI Borders */
+  --c-blue: #88c0d0;         /* Functions / Accents */
+  --c-keyword: #81a1c1;      /* Keywords */
+  --c-text: #7b88a1;         /* Main text */
+  --c-string: #a3be8c;       /* Strings */
+  --c-line: #434c5e33;       /* Active line highlight */
+  
+  /* --- SUBTLE CODE BLOCK CONTRAST --- */
+  --c-code-bg: #16181d;      /* Just a touch darker than #1e2127 */
+  --c-code-border: #242931;  /* Muted border for a soft edge */
+}
+
+/* 1. FORCE THEME BASICS */
+.theme-dark {
+  --background-primary: var(--c-bg) !important;
+  --background-primary-alt: var(--c-bg) !important;
+  --background-secondary: var(--c-side) !important;
+  --background-secondary-alt: var(--c-side) !important;
+  --background-modifier-border: var(--c-border) !important;
+  --code-background: var(--c-code-bg) !important;
+
+  --text-normal: var(--c-text) !important;
+  --text-muted: #4c566a !important;
+  --text-accent: var(--c-blue) !important;
+  --interactive-accent: var(--c-blue) !important;
+  color-scheme: dark;
+}
+
+/* 2. LAYERS & CONTAINERS */
+.app-container, 
+.workspace, 
+.workspace-leaf, 
+.workspace-leaf-content, 
+.view-content,
+.markdown-source-view.mod-cm6 {
+  background-color: var(--c-bg) !important;
+}
+
+/* 3. ENHANCED CODE BLOCKS (The Contrast Fix) */
+/* This handles the Editor / Live Preview */
+.markdown-source-view.mod-cm6 .cm-content .cm-codeblock,
+.markdown-source-view.mod-cm6 .cm-editor .cm-codeblock,
+.markdown-source-view.mod-cm6 .cm-scroller .cm-codeblock {
+  background-color: var(--c-code-bg) !important;
+}
+
+/* This handles Reading Mode & the container shape */
+.markdown-rendered pre, 
+.cm-content[contenteditable="true"] .cm-codeblock {
+  background-color: var(--c-code-bg) !important;
+  border: 1px solid var(--c-code-border) !important;
+  border-radius: 8px !important;
+  padding: 1.2em !important;
+  margin: 1.5em 0 !important;
+}
+
+/* Inline Code Badges */
+code:not(pre > code) {
+  background-color: #242931 !important;
+  color: #8fbcbb !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 4px !important;
+}
+
+/* 4. SYNTAX HIGHLIGHTING */
+.cm-header-1, .inline-title { color: #eceff4 !important; font-weight: 700; }
+.cm-header-2 { color: var(--c-blue) !important; }
+.cm-keyword { color: var(--c-keyword) !important; }
+.cm-string { color: var(--c-string) !important; }
+.cm-comment { color: #8597bc !important; font-style: italic; }
+.cm-function { color: var(--c-blue) !important; }
+
+/* 5. INTERACTIVE ELEMENTS */
+.cm-activeLine {
+  background-color: var(--c-line) !important;
+  box-shadow: -3px 0 0 0 var(--c-blue) !important;
+}
+
+.workspace-tab-header.is-active {
+  background-color: var(--c-bg) !important;
+  box-shadow: 0 -2px 0 0 var(--c-blue) inset !important;
+}
