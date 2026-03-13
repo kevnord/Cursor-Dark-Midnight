@@ -12,6 +12,9 @@ Unlike standard dark themes that use charcoal greys, **Cursor Dark Midnight** ut
 - **Developer-Centric UI:** Styled checkboxes, scrollbars, and sidebars that match the "Command Center" vibe of a Proxmox or UniFi dashboard.
 - **Plugin Support:** Custom styling for popular plugins like **Dataview**.
 
+![Screenshot](./Screenshot.png)
+
+
 ## Installation
 
 ### The Easy Way (Manual)
